@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2011/01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:callinggroupdtns="http://soap.crmapi.util.redknee.com/callinggroups/xsd/2011/01" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns:generalprovdtns="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2010/06" xmlns:serviceandbundledtns="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2011/01" xmlns:serviceandbundlev1_0dtns="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2009/04" xmlns:serviceandbundlev1_1dtns="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/06" xmlns:serviceandbundlev1_2dtns="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/11" xmlns:subscriptiondtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/06">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2009/04" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/11" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd"/>
+  <xs:element name="BundleAdjustmentOperationType" type="serviceandbundledtns:BundleAdjustmentOperationType"/>
+  <xs:simpleType name="BundleAdjustmentOperationType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Increment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Decrement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivationFeeType" type="serviceandbundledtns:ActivationFeeType"/>
+  <xs:simpleType name="ActivationFeeType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Full</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Prorated</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PricePlanFunctionType" type="serviceandbundledtns:PricePlanFunctionType"/>
+  <xs:simpleType name="PricePlanFunctionType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Normal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Pool</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>VPN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BundleType" type="serviceandbundledtns:BundleType"/>
+  <xs:simpleType name="BundleType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Voice</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>SMS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Event</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Monetary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Cross Service</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Points</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QuotaSchemeType" type="serviceandbundledtns:QuotaSchemeType"/>
+  <xs:simpleType name="QuotaSchemeType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Unlimited</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Fixed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Moving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GroupChargingSchemeType" type="serviceandbundledtns:GroupChargingSchemeType"/>
+  <xs:simpleType name="GroupChargingSchemeType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Group not supported</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Member bundle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Group bundle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivationSchemeType" type="serviceandbundledtns:ActivationSchemeType"/>
+  <xs:simpleType name="ActivationSchemeType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Activate on provision</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Scheduled activation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>First call activation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExpirySchemeType" type="serviceandbundledtns:ExpirySchemeType"/>
+  <xs:simpleType name="ExpirySchemeType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Never expire</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Expire and delay purge</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PricePlanDependencyGroupType" type="serviceandbundledtns:PricePlanDependencyGroupType"/>
+  <xs:simpleType name="PricePlanDependencyGroupType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Exclusive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Inclusive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Independent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ServicePeriod">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Monthly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Annual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Weekly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Multi-Monthly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Daily</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AuxiliaryServiceType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Calling Group</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Basic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Provisionable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>HomeZone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>VPN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Voicemail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Additional Mobile Number</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>PRBT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>Promotion</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Discount</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Service Provisioning Gateway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>PRBT Supplementary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Multi-SIM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Data Opt-In</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Promotional Opt-Out</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BundleAdjustment" type="serviceandbundledtns:BundleAdjustment"/>
+  <xs:complexType name="BundleAdjustment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bundleIdentifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="operation" nillable="true" type="serviceandbundledtns:BundleAdjustmentOperationType"/>
+      <xs:element minOccurs="0" name="amount" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleAdjustmentResult" type="serviceandbundledtns:BundleAdjustmentResult"/>
+  <xs:complexType name="BundleAdjustmentResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adjustment" nillable="true" type="serviceandbundledtns:BundleAdjustment"/>
+      <xs:element minOccurs="0" name="exception" nillable="true" type="exns:CRMException"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleAdjustmentResponse" type="serviceandbundledtns:BundleAdjustmentResponse"/>
+  <xs:complexType name="BundleAdjustmentResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="results" nillable="true" type="serviceandbundledtns:BundleAdjustmentResult"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceFeeReference" type="serviceandbundledtns:ServiceFeeReference"/>
+  <xs:complexType name="ServiceFeeReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="packageID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="period" nillable="true" type="serviceandbundledtns:ServicePeriod"/>
+      <xs:element minOccurs="0" name="preference" nillable="true" type="serviceandbundlev1_0dtns:ServicePreference"/>
+      <xs:element minOccurs="0" name="type" nillable="true" type="serviceandbundledtns:ServiceType"/>
+      <xs:element minOccurs="0" name="recurrenceInterval" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuxiliaryService" type="serviceandbundledtns:AuxiliaryService"/>
+  <xs:complexType name="AuxiliaryService">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:AuxiliaryServiceReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastModified" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="provisionOnSuspendOrDisable" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="activationFeeType" nillable="true" type="serviceandbundledtns:ActivationFeeType"/>
+          <xs:element minOccurs="0" name="smartSuspension" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="permission" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuxiliaryServiceReference" type="serviceandbundledtns:AuxiliaryServiceReference"/>
+  <xs:complexType name="AuxiliaryServiceReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adjustmentTypeID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="serviceOption" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="callingGroupID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="callingGroupType" nillable="true" type="serviceandbundlev1_1dtns:CallingGroupType"/>
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="paidType" nillable="true" type="dtns:PaidType"/>
+      <xs:element minOccurs="0" name="period" nillable="true" type="serviceandbundledtns:ServicePeriod"/>
+      <xs:element minOccurs="0" name="requiresAdditionalMobileNumber" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="state" nillable="true" type="serviceandbundlev1_0dtns:AuxiliaryServiceState"/>
+      <xs:element minOccurs="0" name="technology" nillable="true" type="dtns:TechnologyType"/>
+      <xs:element minOccurs="0" name="type" nillable="true" type="serviceandbundledtns:AuxiliaryServiceType"/>
+      <xs:element minOccurs="0" name="recurrence" nillable="true" type="serviceandbundledtns:RecurrenceScheme"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuxiliaryServiceModificationResult" type="serviceandbundledtns:AuxiliaryServiceModificationResult"/>
+  <xs:complexType name="AuxiliaryServiceModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auxiliaryService" nillable="true" type="serviceandbundledtns:AuxiliaryService"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceReference" type="serviceandbundledtns:ServiceReference"/>
+  <xs:complexType name="ServiceReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="subscriptionType" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="technology" nillable="true" type="dtns:TechnologyType"/>
+      <xs:element minOccurs="0" name="type" nillable="true" type="serviceandbundledtns:ServiceType"/>
+      <xs:element minOccurs="0" name="recurrence" nillable="true" type="serviceandbundledtns:RecurrenceScheme"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Service" type="serviceandbundledtns:Service"/>
+  <xs:complexType name="Service">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:ServiceReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="executionOrder" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="enableCLTC" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="reprovisionOnActive" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="activationFeeType" nillable="true" type="serviceandbundledtns:ActivationFeeType"/>
+          <xs:element minOccurs="0" name="smartSuspension" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="adjustmentTypeID" nillable="true" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceModificationResult" type="serviceandbundledtns:ServiceModificationResult"/>
+  <xs:complexType name="ServiceModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="service" nillable="true" type="serviceandbundledtns:Service"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleReference" type="serviceandbundledtns:BundleReference"/>
+  <xs:complexType name="BundleReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="auxiliary" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="paidType" nillable="true" type="dtns:PaidType"/>
+      <xs:element minOccurs="0" name="recurrence" nillable="true" type="serviceandbundledtns:RecurrenceScheme"/>
+      <xs:element minOccurs="0" name="bundleType" nillable="true" type="serviceandbundledtns:BundleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bundle" type="serviceandbundledtns:Bundle"/>
+  <xs:complexType name="Bundle">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:BundleReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="groupIdentifier" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="auxiliaryServiceCharge" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="smartSuspension" nillable="true" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="bundleCategoryIDs" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="currency" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="quotaScheme" nillable="true" type="serviceandbundledtns:QuotaSchemeType"/>
+          <xs:element minOccurs="0" name="enablePromotionProvision" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="reprovisionOnActive" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="activationFeeType" nillable="true" type="serviceandbundledtns:ActivationFeeType"/>
+          <xs:element minOccurs="0" name="initialBalanceLimit" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="chargingPriority" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="groupChargingScheme" nillable="true" type="serviceandbundledtns:GroupChargingSchemeType"/>
+          <xs:element minOccurs="0" name="rolloverPercent" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="rolloverMax" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="expiryPercent" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="activationScheme" nillable="true" type="serviceandbundledtns:ActivationSchemeType"/>
+          <xs:element minOccurs="0" name="expiryScheme" nillable="true" type="serviceandbundledtns:ExpirySchemeType"/>
+          <xs:element minOccurs="0" name="rolloverMaxPercentage" nillable="true" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceInitialLimits" nillable="true" type="serviceandbundledtns:ServiceBalanceLimit"/>
+          <xs:element minOccurs="0" name="adjustmentTypeID" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="auxiliaryAdjustmentTypeID" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="enabled" nillable="true" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="bundleCategories" nillable="true" type="serviceandbundledtns:BundleCategoryAssociation"/>
+          <xs:element minOccurs="0" name="chargeRolloverFirst" nillable="true" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BundleCategoryAssociation" type="serviceandbundledtns:BundleCategoryAssociation"/>
+  <xs:complexType name="BundleCategoryAssociation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bundleCategoryID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="rate" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleModificationResult" type="serviceandbundledtns:BundleModificationResult"/>
+  <xs:complexType name="BundleModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bundle" nillable="true" type="serviceandbundledtns:Bundle"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceBalanceLimit" type="serviceandbundledtns:ServiceBalanceLimit"/>
+  <xs:complexType name="ServiceBalanceLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applicationID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="initialBalanceLimit" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleCategoryReference" type="serviceandbundledtns:BundleCategoryReference"/>
+  <xs:complexType name="BundleCategoryReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="enabled" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="unitType" nillable="true" type="subscriptiondtns:SubscriptionBundleUnitType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleCategory" type="serviceandbundledtns:BundleCategory"/>
+  <xs:complexType name="BundleCategory">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:BundleCategoryReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BundleCategoryModificationResult" type="serviceandbundledtns:BundleCategoryModificationResult"/>
+  <xs:complexType name="BundleCategoryModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bundleCategory" nillable="true" type="serviceandbundledtns:BundleCategory"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleCategoryRatePlanAssociationReference" type="serviceandbundledtns:BundleCategoryRatePlanAssociationReference"/>
+  <xs:complexType name="BundleCategoryRatePlanAssociationReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="bundleID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="categoryID" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleCategoryRatePlanAssociation" type="serviceandbundledtns:BundleCategoryRatePlanAssociation"/>
+  <xs:complexType name="BundleCategoryRatePlanAssociation">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:BundleCategoryRatePlanAssociationReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoryDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="voiceRatePlan" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="smsRatePlan" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="dataRatePlan" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BundleCategoryRatePlanAssociationModificationResult" type="serviceandbundledtns:BundleCategoryRatePlanAssociationModificationResult"/>
+  <xs:complexType name="BundleCategoryRatePlanAssociationModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="association" nillable="true" type="serviceandbundledtns:BundleCategoryRatePlanAssociation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanReference" type="serviceandbundledtns:PricePlanReference"/>
+  <xs:complexType name="PricePlanReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="currentVersion" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="enabled" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="paidtype" nillable="true" type="dtns:PaidType"/>
+      <xs:element minOccurs="0" name="subscriptionType" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="subscriptionLevel" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="technology" nillable="true" type="dtns:TechnologyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlan" type="serviceandbundledtns:PricePlan"/>
+  <xs:complexType name="PricePlan">
+    <xs:complexContent>
+      <xs:extension base="serviceandbundledtns:PricePlanReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="billingMessage" nillable="true" type="dtns:BillingMessageReference"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="criteria" nillable="true" type="serviceandbundlev1_2dtns:PricePlanCriteria"/>
+          <xs:element minOccurs="0" name="nextVersion" nillable="true" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="versions" nillable="true" type="serviceandbundledtns:PricePlanVersion"/>
+          <xs:element minOccurs="0" name="function" nillable="true" type="serviceandbundledtns:PricePlanFunctionType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="group" nillable="true" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="voiceRatePlan" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="smsRatePlan" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="dataRatePlan" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricePlanVersion" type="serviceandbundledtns:PricePlanVersion"/>
+  <xs:complexType name="PricePlanVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="version" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="activation" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="activationDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="createdDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="defaultDeposit" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="defaultCreditLimit" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="defaultPerMinuteAirRate" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="overUsageVoiceRate" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="overUsageSMSRate" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="overUsageDataRate" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceFees" nillable="true" type="serviceandbundledtns:ServiceFeeReference"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="bundleFees" nillable="true" type="serviceandbundledtns:BundleFeeReference"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanModificationResult" type="serviceandbundledtns:PricePlanModificationResult"/>
+  <xs:complexType name="PricePlanModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pricePlan" nillable="true" type="serviceandbundledtns:PricePlan"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanValidationGroup" type="serviceandbundledtns:PricePlanValidationGroup"/>
+  <xs:complexType name="PricePlanValidationGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="parentID" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="prerequisiteIDs" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dependencyIDs" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanValidationGroupModificationResult" type="serviceandbundledtns:PricePlanValidationGroupModificationResult"/>
+  <xs:complexType name="PricePlanValidationGroupModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="validationGroup" nillable="true" type="serviceandbundledtns:PricePlanValidationGroup"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanPrerequisiteGroup" type="serviceandbundledtns:PricePlanPrerequisiteGroup"/>
+  <xs:complexType name="PricePlanPrerequisiteGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="servicePrerequisiteIDs" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dependencyPrerequisiteIDs" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanPrerequisiteGroupModificationResult" type="serviceandbundledtns:PricePlanPrerequisiteGroupModificationResult"/>
+  <xs:complexType name="PricePlanPrerequisiteGroupModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="prerequisiteGroup" nillable="true" type="serviceandbundledtns:PricePlanPrerequisiteGroup"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanDependencyGroup" type="serviceandbundledtns:PricePlanDependencyGroup"/>
+  <xs:complexType name="PricePlanDependencyGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" nillable="true" type="serviceandbundledtns:PricePlanDependencyGroupType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceIDs" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="bundleIDs" nillable="true" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="auxiliaryServiceIDs" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanDependencyGroupModificationResult" type="serviceandbundledtns:PricePlanDependencyGroupModificationResult"/>
+  <xs:complexType name="PricePlanDependencyGroupModificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dependencyGroup" nillable="true" type="serviceandbundledtns:PricePlanDependencyGroup"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleFeeReference" type="serviceandbundledtns:BundleFeeReference"/>
+  <xs:complexType name="BundleFeeReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="packageID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="period" nillable="true" type="serviceandbundledtns:ServicePeriod"/>
+      <xs:element minOccurs="0" name="preference" nillable="true" type="serviceandbundlev1_0dtns:ServicePreference"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecurrenceScheme" type="serviceandbundledtns:RecurrenceScheme"/>
+  <xs:complexType name="RecurrenceScheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="recurrenceType" nillable="true" type="serviceandbundlev1_1dtns:RecurrenceType"/>
+      <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:date"/>
+      <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:date"/>
+      <xs:element minOccurs="0" name="period" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="periodUnitType" nillable="true" type="serviceandbundledtns:ServicePeriod"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricePlanOption" type="serviceandbundledtns:PricePlanOption"/>
+  <xs:complexType name="PricePlanOption">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:long"/>
+      <xs:element name="optionType" type="serviceandbundlev1_0dtns:PricePlanOptionType"/>
+      <xs:element minOccurs="0" name="optionState" nillable="true" type="serviceandbundlev1_1dtns:PricePlanOptionStateType"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element name="isSelected" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="provisioningState" nillable="true" type="dtns:ProvisioningStateType"/>
+      <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:date"/>
+      <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:date"/>
+      <xs:element minOccurs="0" name="numberOfPayments" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="recurrence" nillable="true" type="serviceandbundledtns:RecurrenceScheme"/>
+      <xs:element minOccurs="0" name="adjustmentTypeID" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="prorationEnabled" nillable="true" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateBucketHistoryRequest" type="serviceandbundledtns:CreateBucketHistoryRequest"/>
+  <xs:complexType name="CreateBucketHistoryRequest">
+    <xs:sequence>
+      <xs:element name="eventDate" type="xs:date"/>
+      <xs:element name="spid" type="xs:int"/>
+      <xs:element name="ban" type="xs:string"/>
+      <xs:element name="bundleID" type="xs:long"/>
+      <xs:element name="categoryID" type="xs:long"/>
+      <xs:element name="bucketID" type="xs:long"/>
+      <xs:element name="adjustmentAmount" type="xs:long"/>
+      <xs:element name="balance" type="xs:long"/>
+      <xs:element name="amountUnit" type="subscriptiondtns:SubscriptionBundleUnitType"/>
+      <xs:element minOccurs="0" name="expiryExtension" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="expiryDate" nillable="true" type="xs:date"/>
+      <xs:element minOccurs="0" name="externalReferenceID" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

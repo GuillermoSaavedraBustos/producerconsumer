@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2011/02" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:accountdtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2011/01" xmlns:accountv1_1dtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns:extdtns="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2011/02" xmlns:extv1_0dtns="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" schemaLocation="AccountService_1_2_3_4.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2011/01" schemaLocation="AccountService_1_2_3_4_5_6.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd"/>
+  <xs:element name="AccountExtension" type="extdtns:AccountExtension"/>
+  <xs:complexType name="AccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pool" nillable="true" type="extdtns:PoolAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubscriberLimitAccountExtension" type="extdtns:SubscriberLimitAccountExtension"/>
+  <xs:complexType name="SubscriberLimitAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="subscriberLimit" nillable="true" type="extdtns:MutableSubscriberLimitAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GroupPricePlanAccountExtension" type="extdtns:GroupPricePlanAccountExtension"/>
+  <xs:complexType name="GroupPricePlanAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="groupPricePlan" nillable="true" type="extdtns:MutableGroupPricePlanAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FriendsAndFamilyAccountExtension" type="extdtns:FriendsAndFamilyAccountExtension"/>
+  <xs:complexType name="FriendsAndFamilyAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="friendsAndFamily" nillable="true" type="extdtns:MutableFriendsAndFamilyAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyAccountExtension" type="extdtns:ReadOnlyAccountExtension"/>
+  <xs:complexType name="ReadOnlyAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseReadOnlyAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pool" nillable="true" type="extdtns:ReadOnlyPoolAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyGroupPricePlanExtn" type="extdtns:ReadOnlyGroupPricePlanExtn"/>
+  <xs:complexType name="ReadOnlyGroupPricePlanExtn">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseReadOnlyAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="groupPricePlan" nillable="true" type="extdtns:ReadOnlyGroupPricePlanAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlySubscriberLimitExtn" type="extdtns:ReadOnlySubscriberLimitExtn"/>
+  <xs:complexType name="ReadOnlySubscriberLimitExtn">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseReadOnlyAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="subscriberLimit" nillable="true" type="extdtns:ReadOnlySubscriberLimitAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyFriendsAndFamilyExtn" type="extdtns:ReadOnlyFriendsAndFamilyExtn"/>
+  <xs:complexType name="ReadOnlyFriendsAndFamilyExtn">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseReadOnlyAccountExtension">
+        <xs:choice minOccurs="0">
+          <xs:sequence>
+            <xs:element minOccurs="0" name="friendsAndFamily" nillable="true" type="extdtns:ReadOnlyFriendsAndFamilyAccountExtension"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyPoolAccountExtension" type="extdtns:ReadOnlyPoolAccountExtension"/>
+  <xs:complexType name="ReadOnlyPoolAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="extdtns:PoolAccountExtension"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PoolAccountExtension" type="extdtns:PoolAccountExtension"/>
+  <xs:complexType name="PoolAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="extdtns:MutablePoolAccountExtension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="groupMobileNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The group’s mobile number for the pool.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutablePoolAccountExtension" type="extdtns:MutablePoolAccountExtension"/>
+  <xs:complexType name="MutablePoolAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountv1_1dtns:BaseMutableAccountExtension">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="subscriptionPoolProperty" nillable="true" type="extv1_0dtns:SubscriptionPoolProperty">
+            <xs:annotation>
+              <xs:documentation>List of the account’s pools properties.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="bundleIDs" nillable="true" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>A collection of IDs of bundles to be pooled.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="poolLimit" nillable="true" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>The maximum amount of the group's balance which can be used by the member subscriber.  Optional - available to limited quota group-pooled accounts if licensed.  Introduced for TCB 9.0.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="poolLimitStrategy" nillable="true" type="dtns:PoolLimitStrategy">
+            <xs:annotation>
+              <xs:documentation>Indicates the type of limit imposed on the balance used by members of a pooled group.  Introduced for TCB 9.0.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyGroupPricePlanAccountExtension" type="extdtns:ReadOnlyGroupPricePlanAccountExtension"/>
+  <xs:complexType name="ReadOnlyGroupPricePlanAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="extdtns:MutableGroupPricePlanAccountExtension"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableGroupPricePlanAccountExtension" type="extdtns:MutableGroupPricePlanAccountExtension"/>
+  <xs:complexType name="MutableGroupPricePlanAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountv1_1dtns:BaseMutableAccountExtension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="prepaidPricePlanID" nillable="true" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>Prepaid price plan ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="postpaidPricePlanID" nillable="true" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>Postpaid price plan ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlySubscriberLimitAccountExtension" type="extdtns:ReadOnlySubscriberLimitAccountExtension"/>
+  <xs:complexType name="ReadOnlySubscriberLimitAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="extdtns:MutableSubscriberLimitAccountExtension"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableSubscriberLimitAccountExtension" type="extdtns:MutableSubscriberLimitAccountExtension"/>
+  <xs:complexType name="MutableSubscriberLimitAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountv1_1dtns:BaseMutableAccountExtension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maxSubscribers" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Maximum number of subscribers allowed in this account</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyFriendsAndFamilyAccountExtension" type="extdtns:ReadOnlyFriendsAndFamilyAccountExtension"/>
+  <xs:complexType name="ReadOnlyFriendsAndFamilyAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="extdtns:MutableFriendsAndFamilyAccountExtension"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableFriendsAndFamilyAccountExtension" type="extdtns:MutableFriendsAndFamilyAccountExtension"/>
+  <xs:complexType name="MutableFriendsAndFamilyAccountExtension">
+    <xs:complexContent>
+      <xs:extension base="accountv1_1dtns:BaseMutableAccountExtension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cugTemplateID" nillable="true" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>CUG Template ID to be associated with the FnF Extension</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="cugOwnerMSISDN" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Owner MSISDN of the Closed User Group</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="smsNotificationMSISDN" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Mobile number to send SMS notifications to in the event of CUG changes</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

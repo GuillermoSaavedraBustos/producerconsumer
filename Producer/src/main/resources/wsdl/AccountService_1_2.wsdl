@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v2.0" xmlns:dtnsv1_1="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:generalprovv2_0dtns="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2011/01" xmlns:cardpackagedtns="http://soap.crmapi.util.redknee.com/cardpackages/xsd/2009/04" xmlns:accountdtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2011/01" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v2.0" xmlns:subscriptionv1_1dtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2009/04" xmlns:accountv1_0dtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2011/05" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:accountv1_1dtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" xmlns:subscriptionv1_2dtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/06" xmlns:subscriptiondtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2011/01">
+  <wsdl:documentation>Accounts API 2.0 for CRMAPI Version 3.0 on January 19, 2011</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v2.0">
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2011/05" schemaLocation="AccountService_1_2.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" schemaLocation="AccountService_1_2_3.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" schemaLocation="AccountService_1_2_3_4.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2011/01" schemaLocation="AccountService_1_2_3_4_5_6.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2011/02" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2009/04" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2011/01" schemaLocation="AccountService_1_2_3_4_5_6_7_8.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/extensions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/subscriptions/extensions/xsd/2011/04" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/cardpackages/xsd/2009/04" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2011/01" schemaLocation="AccountService_1_2_3_4_5_6_7.xsd"/>
+      <xs:element name="listAccountCreationTemplates" type="tns:listAccountCreationTemplates"/>
+      <xs:complexType name="listAccountCreationTemplates">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="spid" type="xs:int"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountCreationTemplatesResponse" type="tns:listAccountCreationTemplatesResponse"/>
+      <xs:complexType name="listAccountCreationTemplatesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="accountdtns:AccountCreationTemplateReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountProfile" type="tns:getAccountProfile"/>
+      <xs:complexType name="getAccountProfile">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountProfileResponse" type="tns:getAccountProfileResponse"/>
+      <xs:complexType name="getAccountProfileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:AccountProfileQueryResults"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountState" type="tns:updateAccountState"/>
+      <xs:complexType name="updateAccountState">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="state" type="accountv1_0dtns:AccountState"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountWithStateTransition" type="tns:updateAccountWithStateTransition"/>
+      <xs:complexType name="updateAccountWithStateTransition">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="currentState" type="accountv1_0dtns:AccountState"/>
+          <xs:element name="newState" type="accountv1_0dtns:AccountState"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountWithStateTransitionResponse" type="tns:updateAccountWithStateTransitionResponse"/>
+      <xs:complexType name="updateAccountWithStateTransitionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="accountdtns:AccountStateTransitionResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createAccount" type="tns:createAccount"/>
+      <xs:complexType name="createAccount">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="profile" type="accountv1_0dtns:AccountProfile"/>
+          <xs:element name="detail" type="accountdtns:AccountDetail"/>
+          <xs:element name="billing" type="accountdtns:AccountBilling"/>
+          <xs:element minOccurs="0" name="paymentInfo" type="accountdtns:AccountPaymentInfo"/>
+          <xs:element minOccurs="0" name="identification" type="accountdtns:AccountIdentification"/>
+          <xs:element minOccurs="0" name="company" type="accountv1_0dtns:AccountCompanyContactInfo"/>
+          <xs:element minOccurs="0" name="bank" type="accountv1_0dtns:AccountBankInfo"/>
+          <xs:element minOccurs="0" name="contact" type="accountv1_0dtns:AccountContactInfo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="accountdtns:BaseAccountExtension"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createAccountResponse" type="tns:createAccountResponse"/>
+      <xs:complexType name="createAccountResponse">
+        <xs:sequence>
+          <xs:element name="return" type="accountdtns:AccountReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountProfile" type="tns:updateAccountProfile"/>
+      <xs:complexType name="updateAccountProfile">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="profile" type="accountv1_0dtns:MutableAccountProfile"/>
+          <xs:element minOccurs="0" name="detail" type="accountv1_1dtns:MutableAccountDetail"/>
+          <xs:element minOccurs="0" name="billing" type="accountdtns:MutableAccountBilling"/>
+          <xs:element minOccurs="0" name="paymentInfo" type="accountdtns:MutableAccountPaymentInfo"/>
+          <xs:element minOccurs="0" name="identification" type="accountdtns:MutableAccountIdentification"/>
+          <xs:element minOccurs="0" name="company" type="accountv1_0dtns:MutableAccountCompanyContactInfo"/>
+          <xs:element minOccurs="0" name="bank" type="accountv1_0dtns:MutableAccountBankInfo"/>
+          <xs:element minOccurs="0" name="contact" type="accountv1_0dtns:MutableAccountContactInfo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeToHybrid" type="tns:updateAccountConvertSystemTypeToHybrid"/>
+      <xs:complexType name="updateAccountConvertSystemTypeToHybrid">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="contact" type="accountv1_0dtns:MutableAccountContactInfo"/>
+          <xs:element name="identification" type="accountdtns:MutableAccountIdentification"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeToHybridResponse" type="tns:updateAccountConvertSystemTypeToHybridResponse"/>
+      <xs:complexType name="updateAccountConvertSystemTypeToHybridResponse">
+        <xs:sequence>
+          <xs:element name="return" nillable="true" type="accountdtns:AccountReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountAddExtension" type="tns:updateAccountAddExtension"/>
+      <xs:complexType name="updateAccountAddExtension">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="extension" type="accountdtns:BaseAccountExtension"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createIndividualSubscriber" type="tns:createIndividualSubscriber"/>
+      <xs:complexType name="createIndividualSubscriber">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element minOccurs="0" name="creationTemplateID" type="xs:long"/>
+          <xs:element name="accountProfile" type="accountv1_0dtns:AccountProfile"/>
+          <xs:element name="detail" type="accountdtns:AccountDetail"/>
+          <xs:element name="accountBilling" type="accountdtns:AccountBilling"/>
+          <xs:element minOccurs="0" name="paymentInfo" type="accountdtns:AccountPaymentInfo"/>
+          <xs:element minOccurs="0" name="identification" type="accountdtns:AccountIdentification"/>
+          <xs:element minOccurs="0" name="company" type="accountv1_0dtns:AccountCompanyContactInfo"/>
+          <xs:element minOccurs="0" name="bank" type="accountv1_0dtns:AccountBankInfo"/>
+          <xs:element minOccurs="0" name="contact" type="accountv1_0dtns:AccountContactInfo"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="accountdtns:BaseAccountExtension"/>
+          <xs:element name="subscriptionProfile" type="subscriptionv1_2dtns:SubscriptionProfile"/>
+          <xs:element name="status" type="subscriptionv1_1dtns:SubscriptionStatus"/>
+          <xs:element name="rating" type="subscriptiondtns:SubscriptionRating"/>
+          <xs:element name="subscriptionBilling" type="subscriptionv1_1dtns:SubscriptionBilling"/>
+          <xs:element minOccurs="0" name="cardPackage" type="cardpackagedtns:CardPackage"/>
+          <xs:element minOccurs="0" name="options" type="subscriptiondtns:SubscriptionPricePlan"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="subscriptionExtension" type="subscriptiondtns:BaseSubscriptionExtension"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createIndividualSubscriberResponse" type="tns:createIndividualSubscriberResponse"/>
+      <xs:complexType name="createIndividualSubscriberResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="subscriptiondtns:SubscriptionReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountTypes" type="tns:listAccountTypes"/>
+      <xs:complexType name="listAccountTypes">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="spid" type="xs:int"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountTypesResponse" type="tns:listAccountTypesResponse"/>
+      <xs:complexType name="listAccountTypesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="accountdtns:AccountTypeReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listDetailedAccountExtensions" type="tns:listDetailedAccountExtensions"/>
+      <xs:complexType name="listDetailedAccountExtensions">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listDetailedAccountExtensionsResponse" type="tns:listDetailedAccountExtensionsResponse"/>
+      <xs:complexType name="listDetailedAccountExtensionsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="accountdtns:BaseReadOnlyAccountExtension"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountAgedDebt" type="tns:getAccountAgedDebt"/>
+      <xs:complexType name="getAccountAgedDebt">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountAgedDebtResponse" type="tns:getAccountAgedDebtResponse"/>
+      <xs:complexType name="getAccountAgedDebtResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:AccountAgedDebt"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="initiateDirectDebit" type="tns:initiateDirectDebit"/>
+      <xs:complexType name="initiateDirectDebit">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="initiateDirectDebitResponse" type="tns:initiateDirectDebitResponse"/>
+      <xs:complexType name="initiateDirectDebitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:DirectDebitInitiationResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listSubAccounts" type="tns:listSubAccounts"/>
+      <xs:complexType name="listSubAccounts">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="recurse" type="xs:boolean"/>
+          <xs:element name="responsible" type="xs:boolean"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listSubAccountsResponse" type="tns:listSubAccountsResponse"/>
+      <xs:complexType name="listSubAccountsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="accountdtns:AccountReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountFinancialInfo" type="tns:getAccountFinancialInfo"/>
+      <xs:complexType name="getAccountFinancialInfo">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="pagekey" nillable="true" type="xs:string"/>
+          <xs:element name="subAccounts" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountFinancialInfoResponse" type="tns:getAccountFinancialInfoResponse"/>
+      <xs:complexType name="getAccountFinancialInfoResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="accountdtns:accountFinancialInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeHybridToPostpaid" type="tns:updateAccountConvertSystemTypeHybridToPostpaid"/>
+      <xs:complexType name="updateAccountConvertSystemTypeHybridToPostpaid">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeHybridToPostpaidResponse" type="tns:updateAccountConvertSystemTypeHybridToPostpaidResponse"/>
+      <xs:complexType name="updateAccountConvertSystemTypeHybridToPostpaidResponse">
+        <xs:sequence>
+          <xs:element name="return" nillable="true" type="accountdtns:AccountReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeHybridToPrepaid" type="tns:updateAccountConvertSystemTypeHybridToPrepaid"/>
+      <xs:complexType name="updateAccountConvertSystemTypeHybridToPrepaid">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountConvertSystemTypeHybridToPrepaidResponse" type="tns:updateAccountConvertSystemTypeHybridToPrepaidResponse"/>
+      <xs:complexType name="updateAccountConvertSystemTypeHybridToPrepaidResponse">
+        <xs:sequence>
+          <xs:element name="return" nillable="true" type="accountdtns:AccountReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountBillCycleActivity" type="tns:getAccountBillCycleActivity"/>
+      <xs:complexType name="getAccountBillCycleActivity">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountBillCycleActivityResponse" type="tns:getAccountBillCycleActivityResponse"/>
+      <xs:complexType name="getAccountBillCycleActivityResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:AccountBillCycleActivity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountBillCycleResponse" type="tns:updateAccountBillCycleResponse"/>
+      <xs:complexType name="updateAccountBillCycleResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:AccountBillCycleActivity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="deleteAccount" type="tns:deleteAccount"/>
+      <xs:complexType name="deleteAccount">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountBillCycle" type="tns:updateAccountBillCycle"/>
+      <xs:complexType name="updateAccountBillCycle">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="billCycleID" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountVPNMobileNumber" type="tns:updateAccountVPNMobileNumber"/>
+      <xs:complexType name="updateAccountVPNMobileNumber">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="mobileNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="acquireMobileNumber" type="tns:acquireMobileNumber"/>
+      <xs:complexType name="acquireMobileNumber">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="mobileNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="releaseMobileNumber" type="tns:releaseMobileNumber"/>
+      <xs:complexType name="releaseMobileNumber">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="mobileNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountRoles" type="tns:listAccountRoles"/>
+      <xs:complexType name="listAccountRoles">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountBalance" type="tns:getAccountBalance"/>
+      <xs:complexType name="getAccountBalance">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountParent" type="tns:updateAccountParent"/>
+      <xs:complexType name="updateAccountParent">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element name="parentID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="newDepositAmount" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="responsible" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="expiryExtension" nillable="true" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getDetailedAccountBalances" type="tns:getDetailedAccountBalances"/>
+      <xs:complexType name="getDetailedAccountBalances">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ascendToResponsible" nillable="true" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountExtensions" type="tns:listAccountExtensions"/>
+      <xs:complexType name="listAccountExtensions">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element default="true" minOccurs="0" name="isAscending" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountExtension" type="tns:getAccountExtension"/>
+      <xs:complexType name="getAccountExtension">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="extensionReference" type="accountv1_1dtns:BaseAccountExtensionReference"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountExtensionResponse" type="tns:getAccountExtensionResponse"/>
+      <xs:complexType name="getAccountExtensionResponse">
+        <xs:sequence>
+          <xs:element name="return" type="accountdtns:BaseReadOnlyAccountExtension"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountExtension" type="tns:updateAccountExtension"/>
+      <xs:complexType name="updateAccountExtension">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="extensionReference" type="accountv1_1dtns:BaseAccountExtensionReference"/>
+          <xs:element name="extension" type="accountv1_1dtns:BaseMutableAccountExtension"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountRemoveExtension" type="tns:updateAccountRemoveExtension"/>
+      <xs:complexType name="updateAccountRemoveExtension">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="extensionReference" type="accountv1_1dtns:BaseAccountExtensionReference"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="executeAccountBalanceQuery" type="tns:executeAccountBalanceQuery"/>
+      <xs:complexType name="executeAccountBalanceQuery">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="accountID" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="balanceTypes" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountsForID" type="tns:listAccountsForID"/>
+      <xs:complexType name="listAccountsForID">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="ids" nillable="true" type="generalprovv2_0dtns:IdentificationEntry"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="states" nillable="true" type="accountv1_0dtns:AccountState"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="listAccountsForIDResponse" type="tns:listAccountsForIDResponse"/>
+      <xs:complexType name="listAccountsForIDResponse">
+        <xs:sequence>
+          <xs:element name="return" nillable="true" type="accountdtns:AccountForIDResults"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountParentV2" type="tns:updateAccountParentV2"/>
+      <xs:complexType name="updateAccountParentV2">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="accountID" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="parentID" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="newDepositAmount" nillable="true" type="xs:long"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="responsible" nillable="true" type="xs:boolean"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="expiryExtension" nillable="true" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="updateAccountParentV2Response" type="tns:updateAccountParentV2Response"/>
+      <xs:complexType name="updateAccountParentV2Response">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="return" nillable="true" type="dtns:GenericResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountProfileV2" type="tns:getAccountProfileV2"/>
+      <xs:complexType name="getAccountProfileV2">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="accountID" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountProfileV2Response" type="tns:getAccountProfileV2Response"/>
+      <xs:complexType name="getAccountProfileV2Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" nillable="true" type="accountdtns:AccountProfileQueryResultsV2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountCug" type="tns:getAccountCug"/>
+      <xs:complexType name="getAccountCug">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="accountID" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAccountCugResponse" type="tns:getAccountCugResponse"/>
+      <xs:complexType name="getAccountCugResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="return" nillable="true" type="accountdtns:AccountCugQueryResults"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="convertIndividualToGroup" type="tns:convertIndividualToGroup"/>
+      <xs:complexType name="convertIndividualToGroup">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="accountID" nillable="true" type="xs:string"/>
+          <xs:element default="false" minOccurs="0" name="validateOnly" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="convertIndividualToGroupResponse" type="tns:convertIndividualToGroupResponse"/>
+      <xs:complexType name="convertIndividualToGroupResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="return" nillable="true" type="dtns:GenericResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="convertBillingTypeRequest" type="tns:convertBillingTypeRequest"/>
+      <xs:complexType name="convertBillingTypeRequest">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element default="true" minOccurs="0" name="validateOnly" type="xs:boolean"/>
+          <xs:element name="request" type="accountdtns:ConvertBillingTypeRequest"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="convertBillingTypeResponse" type="tns:convertBillingTypeResponse"/>
+      <xs:complexType name="convertBillingTypeResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="return" nillable="true" type="accountdtns:ConvertBillingTypeResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="duplicateAccountCheck" type="tns:duplicateAccountCheck"/>
+      <xs:complexType name="duplicateAccountCheck">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="dateofbirth" nillable="true" type="xs:dateTime"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="identification" nillable="true" type="generalprovv2_0dtns:IdentificationEntry"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="duplicateAccountCheckResponse" type="tns:duplicateAccountCheckResponse"/>
+      <xs:complexType name="duplicateAccountCheckResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="accountdtns:DuplicateAccountInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="doInternalCreditCheckRequest" type="tns:doInternalCreditCheckRequest"/>
+      <xs:complexType name="doInternalCreditCheckRequest">
+        <xs:sequence>
+          <xs:element name="header" type="dtns:CRMRequestHeader"/>
+          <xs:element name="spid" type="xs:int"/>
+          <xs:element name="accountID" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="identification" type="generalprovv2_0dtns:IdentificationEntry"/>
+          <xs:element name="subCountRequired" nillable="true" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtnsv1_1:GenericParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="doInternalCreditCheckResponse" type="tns:doInternalCreditCheckResponse"/>
+      <xs:complexType name="doInternalCreditCheckResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="blackListStatus" type="generalprovv2_0dtns:BlacklistStatus"/>
+          <xs:element name="externalReevaluationRequired" nillable="true" type="xs:boolean"/>
+          <xs:element name="subscriptionCount" nillable="true" type="accountdtns:SubscriptionCount"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateAccountAddExtensionMessage">
+    <wsdl:part name="part1" element="tns:updateAccountAddExtension"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountsForIDResponse">
+    <wsdl:part name="part1" element="tns:listAccountsForIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountWithStateTransitionResponse">
+    <wsdl:part name="part1" element="tns:updateAccountWithStateTransitionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="initiateDirectDebitResponse">
+    <wsdl:part name="part1" element="tns:initiateDirectDebitResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createIndividualSubscriberResponse">
+    <wsdl:part name="part1" element="tns:createIndividualSubscriberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountExtensionMessage">
+    <wsdl:part name="part1" element="tns:updateAccountExtension"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeHybridToPostpaidResponse">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeHybridToPostpaidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="duplicateAccountCheckResponse">
+    <wsdl:part name="part1" element="tns:duplicateAccountCheckResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountProfileMessage">
+    <wsdl:part name="part1" element="tns:getAccountProfile"/>
+  </wsdl:message>
+  <wsdl:message name="convertIndividualToGroupResponse">
+    <wsdl:part name="part1" element="tns:convertIndividualToGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeHybridToPostpaidMessage">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeHybridToPostpaid"/>
+  </wsdl:message>
+  <wsdl:message name="getDetailedAccountBalancesMessage">
+    <wsdl:part name="part1" element="tns:getDetailedAccountBalances"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountExtensionMessage">
+    <wsdl:part name="part1" element="tns:getAccountExtension"/>
+  </wsdl:message>
+  <wsdl:message name="createAccountMessage">
+    <wsdl:part name="part1" element="tns:createAccount"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountFinancialInfoResponse">
+    <wsdl:part name="part1" element="tns:getAccountFinancialInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="duplicateAccountCheckMessage">
+    <wsdl:part name="part1" element="tns:duplicateAccountCheck"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountCugResponse">
+    <wsdl:part name="part1" element="tns:getAccountCugResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountParentV2Message">
+    <wsdl:part name="part1" element="tns:updateAccountParentV2"/>
+  </wsdl:message>
+  <wsdl:message name="convertIndividualToGroupMessage">
+    <wsdl:part name="part1" element="tns:convertIndividualToGroup"/>
+  </wsdl:message>
+  <wsdl:message name="initiateDirectDebitMessage">
+    <wsdl:part name="part1" element="tns:initiateDirectDebit"/>
+  </wsdl:message>
+  <wsdl:message name="convertBillingTypeResponse">
+    <wsdl:part name="part1" element="tns:convertBillingTypeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="listSubAccountsMessage">
+    <wsdl:part name="part1" element="tns:listSubAccounts"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountBillCycleResponse">
+    <wsdl:part name="part1" element="tns:updateAccountBillCycleResponse"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountCreationTemplatesMessage">
+    <wsdl:part name="part1" element="tns:listAccountCreationTemplates"/>
+  </wsdl:message>
+  <wsdl:message name="listSubAccountsResponse">
+    <wsdl:part name="part1" element="tns:listSubAccountsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountBalanceMessage">
+    <wsdl:part name="part1" element="tns:getAccountBalance"/>
+  </wsdl:message>
+  <wsdl:message name="acquireMobileNumberMessage">
+    <wsdl:part name="part1" element="tns:acquireMobileNumber"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountRemoveExtensionMessage">
+    <wsdl:part name="part1" element="tns:updateAccountRemoveExtension"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountTypesResponse">
+    <wsdl:part name="part1" element="tns:listAccountTypesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountCugMessage">
+    <wsdl:part name="part1" element="tns:getAccountCug"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountAgedDebtResponse">
+    <wsdl:part name="part1" element="tns:getAccountAgedDebtResponse"/>
+  </wsdl:message>
+  <wsdl:message name="releaseMobileNumberMessage">
+    <wsdl:part name="part1" element="tns:releaseMobileNumber"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountExtensionsMessage">
+    <wsdl:part name="part1" element="tns:listAccountExtensions"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountBillCycleMessage">
+    <wsdl:part name="part1" element="tns:updateAccountBillCycle"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountParentV2Response">
+    <wsdl:part name="part1" element="tns:updateAccountParentV2Response"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountProfileV2Response">
+    <wsdl:part name="part1" element="tns:getAccountProfileV2Response"/>
+  </wsdl:message>
+  <wsdl:message name="createAccountResponse">
+    <wsdl:part name="part1" element="tns:createAccountResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountParentMessage">
+    <wsdl:part name="part1" element="tns:updateAccountParent"/>
+  </wsdl:message>
+  <wsdl:message name="doInternalCreditCheckMessage">
+    <wsdl:part name="part1" element="tns:doInternalCreditCheckRequest"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountWithStateTransitionMessage">
+    <wsdl:part name="part1" element="tns:updateAccountWithStateTransition"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountRolesMessage">
+    <wsdl:part name="part1" element="tns:listAccountRoles"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountTypesMessage">
+    <wsdl:part name="part1" element="tns:listAccountTypes"/>
+  </wsdl:message>
+  <wsdl:message name="listDetailedAccountExtensionsResponse">
+    <wsdl:part name="part1" element="tns:listDetailedAccountExtensionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeHybridToPrepaidResponse">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeHybridToPrepaidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountBillCycleActivityMessage">
+    <wsdl:part name="part1" element="tns:getAccountBillCycleActivity"/>
+  </wsdl:message>
+  <wsdl:message name="executeAccountBalanceQueryMessage">
+    <wsdl:part name="part1" element="tns:executeAccountBalanceQuery"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountProfileV2Message">
+    <wsdl:part name="part1" element="tns:getAccountProfileV2"/>
+  </wsdl:message>
+  <wsdl:message name="deleteAccountMessage">
+    <wsdl:part name="part1" element="tns:deleteAccount"/>
+  </wsdl:message>
+  <wsdl:message name="createIndividualSubscriberMessage">
+    <wsdl:part name="part1" element="tns:createIndividualSubscriber"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountStateMessage">
+    <wsdl:part name="part1" element="tns:updateAccountState"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountAgedDebtMessage">
+    <wsdl:part name="part1" element="tns:getAccountAgedDebt"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountExtensionResponse">
+    <wsdl:part name="part1" element="tns:getAccountExtensionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeToHybridMessage">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeToHybrid"/>
+  </wsdl:message>
+  <wsdl:message name="doInternalCreditCheckResponse">
+    <wsdl:part name="part1" element="tns:doInternalCreditCheckResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeToHybridResponse">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeToHybridResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountConvertSystemTypeHybridToPrepaidMessage">
+    <wsdl:part name="part1" element="tns:updateAccountConvertSystemTypeHybridToPrepaid"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountBillCycleActivityResponse">
+    <wsdl:part name="part1" element="tns:getAccountBillCycleActivityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountProfileMessage">
+    <wsdl:part name="part1" element="tns:updateAccountProfile"/>
+  </wsdl:message>
+  <wsdl:message name="convertBillingTypeMessage">
+    <wsdl:part name="part1" element="tns:convertBillingTypeRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountFinancialInfoMessage">
+    <wsdl:part name="part1" element="tns:getAccountFinancialInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountProfileResponse">
+    <wsdl:part name="part1" element="tns:getAccountProfileResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountVPNMobileNumberMessage">
+    <wsdl:part name="part1" element="tns:updateAccountVPNMobileNumber"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountCreationTemplatesResponse">
+    <wsdl:part name="part1" element="tns:listAccountCreationTemplatesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="listAccountsForIDMessage">
+    <wsdl:part name="part1" element="tns:listAccountsForID"/>
+  </wsdl:message>
+  <wsdl:message name="listDetailedAccountExtensionsMessage">
+    <wsdl:part name="part1" element="tns:listDetailedAccountExtensions"/>
+  </wsdl:message>
+</wsdl:definitions>

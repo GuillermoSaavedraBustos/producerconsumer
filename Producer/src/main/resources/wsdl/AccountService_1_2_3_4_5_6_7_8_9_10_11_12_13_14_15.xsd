@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/11" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/11" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+</xs:schema>

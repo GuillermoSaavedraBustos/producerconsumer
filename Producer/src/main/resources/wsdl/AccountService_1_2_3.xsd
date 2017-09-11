@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:accountdtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+  <xs:simpleType name="AccountState">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BillingMessagePreference">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TaxType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SettlementState">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountRoleReference" type="accountdtns:AccountRoleReference"/>
+  <xs:complexType name="AccountRoleReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="allowedSubscriptionClasses" nillable="true" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReadOnlyAccountProfile" type="accountdtns:ReadOnlyAccountProfile"/>
+  <xs:complexType name="ReadOnlyAccountProfile">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:AccountProfile">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountProfile" type="accountdtns:AccountProfile"/>
+  <xs:complexType name="AccountProfile">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:MutableAccountProfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="parent" nillable="true" type="xs:string"/>
+          <xs:element name="responsible" type="xs:boolean"/>
+          <xs:element name="spid" type="xs:int"/>
+          <xs:element name="state" type="accountdtns:AccountState"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableAccountProfile" type="accountdtns:MutableAccountProfile"/>
+  <xs:complexType name="MutableAccountProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReadOnlyAccountCompanyContactInfo" type="accountdtns:ReadOnlyAccountCompanyContactInfo"/>
+  <xs:complexType name="ReadOnlyAccountCompanyContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:AccountCompanyContactInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountCompanyContactInfo" type="accountdtns:AccountCompanyContactInfo"/>
+  <xs:complexType name="AccountCompanyContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:MutableAccountCompanyContactInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableAccountCompanyContactInfo" type="accountdtns:MutableAccountCompanyContactInfo"/>
+  <xs:complexType name="MutableAccountCompanyContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:GenericContactInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="companyFax" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="companyNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="registrationNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="tradingName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyAccountBankInfo" type="accountdtns:ReadOnlyAccountBankInfo"/>
+  <xs:complexType name="ReadOnlyAccountBankInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:AccountBankInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountBankInfo" type="accountdtns:AccountBankInfo"/>
+  <xs:complexType name="AccountBankInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:MutableAccountBankInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableAccountBankInfo" type="accountdtns:MutableAccountBankInfo"/>
+  <xs:complexType name="MutableAccountBankInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:GenericContactInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bankAccountName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="bankAccountNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="bankID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="bankName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="bankNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadOnlyAccountContactInfo" type="accountdtns:ReadOnlyAccountContactInfo"/>
+  <xs:complexType name="ReadOnlyAccountContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:AccountContactInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountContactInfo" type="accountdtns:AccountContactInfo"/>
+  <xs:complexType name="AccountContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:MutableAccountContactInfo">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MutableAccountContactInfo" type="accountdtns:MutableAccountContactInfo"/>
+  <xs:complexType name="MutableAccountContactInfo">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:GenericContactInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactFax" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="employer" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="employerAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="emailNotification" nillable="true" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityQuestion" type="accountdtns:SecurityQuestion"/>
+  <xs:complexType name="SecurityQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="question" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="answer" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericContactInfo" type="accountdtns:GenericContactInfo"/>
+  <xs:complexType name="GenericContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="address3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="province" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

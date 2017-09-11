@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.2" xmlns:cardpackagedtns="http://soap.crmapi.util.redknee.com/cardpackages/xsd/2009/04" xmlns:accountdtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.2" xmlns:subscriptionv1_1dtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2009/04" xmlns:accountv1_0dtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:subscriptionv1_2dtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/06" xmlns:subscriptiondtns="http://soap.crmapi.util.redknee.com/subscriptions/xsd/2010/11">
+  <wsdl:documentation>Accounts API 1.2 for CRMAPI Version 2.3 on November 11th, 2010</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.2">
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2009/04" schemaLocation="AccountService_1_2_3.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" schemaLocation="AccountService_1_2_3_4.xsd"/>
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+</wsdl:definitions>

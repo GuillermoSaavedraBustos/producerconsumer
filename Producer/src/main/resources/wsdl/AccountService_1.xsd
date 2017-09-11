@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08">
+  <xs:simpleType name="SuccessCode">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+      <xs:enumeration value="14"/>
+      <xs:enumeration value="15"/>
+      <xs:enumeration value="16"/>
+      <xs:enumeration value="17"/>
+      <xs:enumeration value="18"/>
+      <xs:enumeration value="19"/>
+      <xs:enumeration value="20"/>
+      <xs:enumeration value="21"/>
+      <xs:enumeration value="22"/>
+      <xs:enumeration value="23"/>
+      <xs:enumeration value="24"/>
+      <xs:enumeration value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ResultCode">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SystemType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PaidType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TechnologyType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="31000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PoolLimitStrategy">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BatchResultType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProvisioningStateType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ServiceProvisionStatus">
+    <xs:annotation>
+      <xs:documentation>Deprecated.  Left here in version 2.2 for validation purposes only.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BillingMessageState">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GenericParameter" type="dtns:GenericParameter"/>
+  <xs:complexType name="GenericParameter">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="value" nillable="true" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericParameterArray" type="dtns:GenericParameterArray"/>
+  <xs:complexType name="GenericParameterArray">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="subElement" nillable="true" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BatchResults" type="dtns:BatchResults"/>
+  <xs:complexType name="BatchResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="overallResult" nillable="true" type="dtns:BatchResultType"/>
+      <xs:element minOccurs="0" name="numberOfRequests" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="numberOfSuccesses" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillingMessageReference" type="dtns:BillingMessageReference"/>
+  <xs:complexType name="BillingMessageReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="spid" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="state" nillable="true" type="dtns:BillingMessageState"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationPreferenceType" type="dtns:NotificationPreferenceType"/>
+  <xs:simpleType name="NotificationPreferenceType">
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Default</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>SMS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Email</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>SMS and Email</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>None</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

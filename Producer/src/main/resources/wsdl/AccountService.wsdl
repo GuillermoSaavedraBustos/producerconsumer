@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Crmapi_faults" targetNamespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>CRMAPI Version 2.0 on August 6th, 2008</wsdl:documentation>
+  <types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified">
+      <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="CRMExceptionFault">
+    <part name="CRMException" element="tns:CRMException"/>
+  </message>
+</definitions>

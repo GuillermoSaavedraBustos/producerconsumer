@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:accountdtns="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:dtnsv1_1="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns:extdtns="http://soap.crmapi.util.redknee.com/accounts/extensions/xsd/2010/06">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/2010/06" schemaLocation="AccountService_1_2_3_4.xsd"/>
+  <xs:element name="PoolAccountExtensionReference" type="extdtns:PoolAccountExtensionReference"/>
+  <xs:complexType name="PoolAccountExtensionReference">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtensionReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="groupMobileNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubscriptionPoolProperty" type="extdtns:SubscriptionPoolProperty"/>
+  <xs:complexType name="SubscriptionPoolProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="subscriptionType" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="initialPoolBalance" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="provisioned" nillable="true" type="dtns:ProvisioningStateType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupPricePlanAccountExtensionReference" type="extdtns:GroupPricePlanAccountExtensionReference"/>
+  <xs:complexType name="GroupPricePlanAccountExtensionReference">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtensionReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubscriberLimitAccountExtensionReference" type="extdtns:SubscriberLimitAccountExtensionReference"/>
+  <xs:complexType name="SubscriberLimitAccountExtensionReference">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtensionReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FriendsAndFamilyAccountExtensionReference" type="extdtns:FriendsAndFamilyAccountExtensionReference"/>
+  <xs:complexType name="FriendsAndFamilyAccountExtensionReference">
+    <xs:complexContent>
+      <xs:extension base="accountdtns:BaseAccountExtensionReference">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" nillable="true" type="dtns:GenericParameter"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

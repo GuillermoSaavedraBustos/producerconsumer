@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/11" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dtns="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" xmlns:generalprovdtns="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2010/06" xmlns:serviceandbundledtns="http://soap.crmapi.util.redknee.com/servicesandbundles/xsd/2010/11">
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/2008/08" schemaLocation="AccountService_1.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08" schemaLocation="AccountService.xsd"/>
+  <xs:import namespace="http://soap.crmapi.util.redknee.com/generalprovisioning/xsd/2010/06" schemaLocation="AccountService_1_2_3_4_5.xsd"/>
+  <xs:element name="PricePlanCriteria" type="serviceandbundledtns:PricePlanCriteria"/>
+  <xs:complexType name="PricePlanCriteria">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contractDuration" nillable="true" type="serviceandbundledtns:ContractDurationPricePlanCriteria"/>
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractDurationPricePlanCriteria" type="serviceandbundledtns:ContractDurationPricePlanCriteria"/>
+  <xs:complexType name="ContractDurationPricePlanCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="minimumDuration" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="maximumDuration" nillable="true" type="xs:long"/>
+      <xs:element name="durationFrequency" type="generalprovdtns:ContractFeeFrequency"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
