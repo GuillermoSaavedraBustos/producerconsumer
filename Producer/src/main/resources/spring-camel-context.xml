@@ -7,13 +7,20 @@
         <propertyPlaceholder id="placeholder" location="classpath:application.properties"/>
         <onException>
             <exception>java.lang.Exception</exception>
-            <redeliveryPolicy
-                maximumRedeliveries="{{camel.timeout.max-delivery}}" redeliveryDelay="{{camel.timeout.redelivery-delay}}"/>
+            <log message="mensaje error"></log>
         </onException>
         <route id="_route1" streamCache="true">
             <!-- TODO: queda pendiente cambiar el namespace y probar, ver readme.pm-->
             <from id="_from1" uri="timer://trigger"/>
+            <log message="mensahe antes vm"></log>
             <to id="_to1" uri="vm:consumer"/>
+        </route>
+        
+        <route id="_route1" streamCache="true">
+            <!-- TODO: queda pendiente cambiar el namespace y probar, ver readme.pm-->
+            <from id="_from1" uri="timer://trigger"/>
+            <log message="mensahe antes vm"></log>
+            <to id="_to1" uri="seda:input"/>
         </route>
     </camelContext>
 </beans>
