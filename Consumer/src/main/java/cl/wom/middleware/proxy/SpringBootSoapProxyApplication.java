@@ -8,6 +8,11 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({"classpath:/spring-camel-context.xml"})
 public class SpringBootSoapProxyApplication {
 
+	private String prueba(){
+		
+		return "";
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootSoapProxyApplication.class, args);
 	}

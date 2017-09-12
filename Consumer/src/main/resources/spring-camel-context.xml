@@ -13,7 +13,8 @@
         <route id="_route1" streamCache="true">
             <!-- TODO: queda pendiente cambiar el namespace y probar, ver readmconsumere.pm-->
             <from id="_from1" uri="vm:consumer"/>            
-            <log id="_log1" message="pasando por servicio proxy ${header.mensaje}"/>
+            <log id="_log1" message="pasando por servicio proxy "/>
+            <to id="_to1" uri="log:out"/>
         </route>
     </camelContext>
 </beans>

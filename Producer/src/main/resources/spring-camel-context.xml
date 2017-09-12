@@ -12,7 +12,7 @@
         </onException>
         <route id="_route1" streamCache="true">
             <!-- TODO: queda pendiente cambiar el namespace y probar, ver readme.pm-->
-            <from id="_from1" uri="cxf:http://0.0.0.0:9999/RedkneeSoap_v3_0/services/AccountService/?wsdlURL=classpath:wsdl/AccountService_1_1.wsdl&amp;serviceName={http://soap.crmapi.util.redknee.com/accounts/Accounts-v2.0}AccountService&amp;portName={http://soap.crmapi.util.redknee.com/accounts/Accounts-v2.0}AccountsSOAP11port_http&amp;dataFormat=MESSAGE"/>
+            <from id="_from1" uri="timer://trigger"/>
             <to id="_to1" uri="vm:consumer"/>
         </route>
     </camelContext>
