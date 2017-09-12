@@ -16,11 +16,11 @@
             <to id="_to1" uri="vm:consumer"/>
         </route>
         
-        <route id="_route1" streamCache="true">
+        <route id="_route12" streamCache="true">
             <!-- TODO: queda pendiente cambiar el namespace y probar, ver readme.pm-->
-            <from id="_from1" uri="timer://trigger"/>
+            <from id="_from12" uri="timer://trigger"/>
             <log message="mensahe antes vm"></log>
-            <to id="_to1" uri="seda:input"/>
+            <to id="_to12" uri="seda:input"/>
         </route>
     </camelContext>
 </beans>

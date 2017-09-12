@@ -19,8 +19,8 @@
         <route>
         <!-- from id="from2" uri="mina:tcp://0.0.0.0:9876?textline=true&amp;sync=true" / -->
 	        <from uri="seda:input" id="forms" />
-	        <log id="_log1" message="pasando por servicio proxy "/>
-	        <to id="_to1" uri="log:out"/>
+	        <log id="_log12" message="pasando por servicio proxy "/>
+	        <to id="_to12" uri="log:out"/>
         </route>
     </camelContext>
 </beans>
